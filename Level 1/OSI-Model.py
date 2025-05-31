@@ -25,5 +25,15 @@ osi_layers = [
         'layer': 'Layer 3 - Network',
         'description': 'Routes packets via IP. Manages logical addressing and path selection.',
         'protocols': ['IP', 'ICMP']
+    },
+    {
+        'layer': 'Layer 2 - Data Link',
+        'description': 'Frames data for physical transfer. Uses MAC addresses for node-to-node communication.',
+        'protocols': ['Ethernet', 'PPP']
+    },
+    {
+        'layer': 'Layer 1 - Physical',
+        'description': 'Transmits raw bit stream over physical medium. Includes cables, signals, voltages.',
+        'protocols': ['DSL', 'USB']
     }
 ]
