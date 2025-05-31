@@ -50,3 +50,12 @@ def display_layer_details(choice):
     print(f"\n{layer['layer']}")
     print(f'Description: {layer['description']}')
     print(f"Example Protocols: {', '. join(layer['protocols'])}")
+
+def simulate_packet_flow():
+    print("\nSimulating Packet Flow Through OSI Layers")
+    print("--------------------------------------------")
+    for layer in reversed (osi_layers):
+        print(f"Encapsulating at {layer['layer']}")
+    print("\nNow sending packet...")
+    for layer in osi_layers:
+        print(f"Decapsulating at {layer['layer']}")
