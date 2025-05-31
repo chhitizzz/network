@@ -37,3 +37,10 @@ osi_layers = [
         'protocols': ['DSL', 'USB']
     }
 ]
+
+def display_menu():
+    print("OSI Model Explorer")
+    print("-------------------")
+    for i, layer in enumerate(osi_layers):
+        print(f"{i + 1}. {layer['layer']}")
+    print('0. Exit')
