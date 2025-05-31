@@ -48,7 +48,7 @@ def display_menu():
 def display_layer_details(choice):
     layer = osi_layers[choice - 1]
     print(f"\n{layer['layer']}")
-    print(f'Description: {layer['description']}')
+    print(f"Description: {layer['description']}")
     print(f"Example Protocols: {', '. join(layer['protocols'])}")
 
 def simulate_packet_flow():
@@ -59,3 +59,21 @@ def simulate_packet_flow():
     print("\nNow sending packet...")
     for layer in osi_layers:
         print(f"Decapsulating at {layer['layer']}")
+
+def main():
+    while True:
+        display_menu()
+        try:
+            choice = int(input("Select a layer to explore (or 0 to simulate/exit): "))
+            if choice == 0:
+                simulate_packet_flow()
+                break
+            elif 1 <= choice <= len(osi_layers):
+                display_layer_details(choice)
+            else:
+                print("Invalid choice. Try again.")
+        except ValueError:
+            print("Invalid input. Enter a number.")
+
+if __name__ == "__main__":
+    main()
