@@ -44,3 +44,9 @@ def display_menu():
     for i, layer in enumerate(osi_layers):
         print(f"{i + 1}. {layer['layer']}")
     print('0. Exit')
+
+def display_layer_details(choice):
+    layer = osi_layers[choice - 1]
+    print(f"\n{layer['layer']}")
+    print(f'Description: {layer['description']}')
+    print(f"Example Protocols: {', '. join(layer['protocols'])}")
